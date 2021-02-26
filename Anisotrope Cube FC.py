@@ -43,8 +43,6 @@ Vertex_2 = geompy.MakeVertex(a, a, b)
 Vertex_3 = geompy.MakeVertex(-1, 0, -b)                             #Center of Sphere_1
 Vertex_4 = geompy.MakeVertex(-b, 0, -0)
 Vertex_5 = geompy.MakeVertex(0, 0, -b)
-#Vertex_6 = geompy.MakeVertex(c, c, c)
-#Vertex_7 = geompy.MakeVertex(-d, -d, -d)
 
 sk = geompy.Sketcher3D()
 sk.addPointsAbsolute(-b, -b, b)                                     #Vertex_1 of Rombus
@@ -57,19 +55,6 @@ Face_1 = geompy.MakeFaceWires([a3D_Sketcher_1], 1)
 Face_2 = geompy.MakeTranslation(Face_1, b, b, 0)
 Rhombohedron = geompy.MakeHexa2Faces(Face_1, Face_2)
 
-#sk_2 = geompy.Sketcher3D()
-#sk_2.addPointsAbsolute(b, b, -b)                                    #Vertex_5 of Rombus
-#sk_2.addPointsAbsolute(0, b, 0)                                     #Vertex_6 of Rombus
-#sk_2.addPointsAbsolute(0, 0, b)                                     #Vertex_7 of Rombus
-#sk_2.addPointsAbsolute(b, 0, 0)                                     #Vertex_8 of Rombus
-#sk_2.addPointsAbsolute(b, b, -b)                                    #Vertex_5 of Rombus
-#a3D_Sketcher_2 = sk_2.wire() 
-
-#Line_1 = geompy.MakeLineTwoPnt(O, Vertex_6)
-#Plane_1 = geompy.MakePlane(Vertex_6, Line_1, 3)
-#Line_2 = geompy.MakeLineTwoPnt(O, Vertex_7)
-#Plane_2 = geompy.MakePlane(Vertex_7, Line_2, 3)
-
 Box_1 = geompy.MakeBoxTwoPnt(Vertex_1, Vertex_2)
 Rotation_1 = geompy.MakeRotation(Box_1, OZ, 45*math.pi/180.0)
 Box_2 = geompy.MakeBoxTwoPnt(Vertex_5, Vertex_2)
@@ -81,16 +66,6 @@ geompy.addToStudy( OY, 'OY' )
 geompy.addToStudy( OZ, 'OZ' )
 geompy.addToStudy( V_1, 'V_1' )
 geompy.addToStudy( V_2, 'V_2' )
-#geompy.addToStudy( Vertex_1, 'Vertex_1' )
-#geompy.addToStudy( Vertex_2, 'Vertex_2' )
-#geompy.addToStudy( Vertex_3, 'Vertex_3' )
-#geompy.addToStudy( Vertex_4, 'Vertex_4' )
-#geompy.addToStudy( Vertex_6, 'Vertex_6' )
-#geompy.addToStudy( Line_1, 'Line_1_' )
-#geompy.addToStudy( Plane_1, 'Plane_1' )
-#geompy.addToStudy( Vertex_7, 'Vertex_7' )
-#geompy.addToStudy( Line_2, 'Line_2' )
-#geompy.addToStudy( Plane_2, 'Plane_2' )
 geompy.addToStudy( Box_1, 'Box_1' )
 geompy.addToStudy( Rotation_1, 'Rotation_1' )
 geompy.addToStudy( Box_2, 'Box_2' )
@@ -102,8 +77,8 @@ geompy.addToStudy( Face_2, 'Face_2' )
 geompy.addToStudy( Rhombohedron, 'Rhombohedron' )
  
 i = 0
-alpha=[0.01,0.02,0.03,0.04,0.05,0.06,0.07,0.08,0.09,0.10,0.11,0.12]
-#alpha=[0.05,0.1]
+#alpha=[0.01,0.02,0.03,0.04,0.05,0.06,0.07,0.08,0.09,0.10,0.11,0.12]
+alpha=[0.05,0.1]
 for element in alpha:
 	Radius = math.sqrt(2)/4/(1-alpha[i])
 	Sphere_1 = geompy.MakeSpherePntR(Vertex_3, Radius)
