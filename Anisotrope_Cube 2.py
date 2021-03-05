@@ -86,7 +86,8 @@ geompy.addToStudy( Extrusion_1, 'Extrusion_1' )
 
 i = 0
 #alpha=[0.01,0.02,0.03,0.04,0.05,0.06,0.07,0.08,0.09,0.10,0.11,0.12,0.13,0.14,0.15,0.16,0.17,0.18,0.19,0.20,0.21,0.22,0.23,0.24,0.25,0.26,0.27,0.28]
-alpha=[0.1]
+#alpha=[n*0.01 for n in range(1,28+1) ]
+alpha=[0.28]
 for element in alpha:
     Sphere_1 = geompy.MakeSphereR(1/(1-alpha[i]))
     Multi_Translation_2 = geompy.MakeMultiTranslation2D(Sphere_1, OX, 2, 3, OY, 2, 3)
@@ -98,7 +99,7 @@ for element in alpha:
     geompy.addToStudy( Sphere_1, 'Sphere_' )
     geompy.addToStudy( Multi_Translation_2, 'Multi-Translation_2_'+str(i+1)  )
     geompy.addToStudy( Multi_Translation_3, 'Multi-Translation_3_'+str(i+1)  )
-    geompy.addToStudy( Cut_1, 'Pore2_'+str(i+1)  )
+    geompy.addToStudy( Cut_1, 'Pore2_'+str(i+1) )
     geompy.addToStudy( Cut_2, 'Pore3_'+str(i+1) )
 
     i = i + 1
