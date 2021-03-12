@@ -80,7 +80,7 @@ geompy.addToStudy( Translation_1, 'Translation_1' )
  
 i = 0
 #alpha=[0.01,0.02,0.03,0.04,0.05,0.06,0.07,0.08,0.09,0.10,0.11,0.12]
-alpha=[0.15]
+alpha=[0.1]
 for element in alpha:
 	Radius = r0/(1-alpha[i])
 	Sphere_1 = geompy.MakeSpherePntR(Vertex_3, Radius)
@@ -93,8 +93,8 @@ for element in alpha:
 	Middle_2 = geompy.MakeMultiTranslation1D(Middle, OZ, 1, 2)
 	Cut_2 = geompy.MakeCutList(Cut_1, [Middle_2])
 
-	Pore_2 = geompy.MakeCommonList([Up_Down, Middle, Rotation_2], True)
-	Pore_3 = geompy.MakeCommonList([Rhombohedron, Cut_2], True)
+	#Pore_2 = geompy.MakeCommonList([Up_Down, Middle, Rotation_2], True)
+	#Pore_3 = geompy.MakeCommonList([Rhombohedron, Cut_2], True)
 
 	geompy.addToStudy( Sphere_1, 'Sphere_'+str(i+1) )
 	geompy.addToStudy( Down, 'Down_'+str(i+1) )
@@ -103,8 +103,8 @@ for element in alpha:
 	geompy.addToStudy( Middle, 'Middle_'+str(i+1) )
 	geompy.addToStudy( Middle_2, 'Middle_2_'+str(i+1) )
 	geompy.addToStudy( Cut_2, 'Pore_'+str(i+1) )
-	geompy.addToStudy( Pore_2, 'Pore_2_'+str(i+1) )
-	geompy.addToStudy( Pore_3, 'Pore_3_'+str(i+1) )
+	#geompy.addToStudy( Pore_2, 'Pore_2_'+str(i+1) )
+	#geompy.addToStudy( Pore_3, 'Pore_3_'+str(i+1) )
 
 	i = i + 1
 	if salome.sg.hasDesktop():

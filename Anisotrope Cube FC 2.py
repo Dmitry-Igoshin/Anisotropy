@@ -102,8 +102,8 @@ geompy.addToStudy( Face_2, 'Face_2' )
 geompy.addToStudy( Rhombohedron, 'Rhombohedron' )
  
 i = 0
-alpha=[0.01,0.02,0.03,0.04,0.05,0.06,0.07,0.08,0.09,0.10,0.11,0.12]
-#alpha=[0.05,0.1]
+#alpha=[0.01,0.02,0.03,0.04,0.05,0.06,0.07,0.08,0.09,0.10,0.11,0.12]
+alpha=[0.05,0.1]
 for element in alpha:
 	Radius = math.sqrt(2)/4/(1-alpha[i])
 	Sphere_1 = geompy.MakeSpherePntR(Vertex_3, Radius)
