@@ -30,12 +30,12 @@ O = geompy.MakeVertex(0, 0, 0)
 OX = geompy.MakeVectorDXDYDZ(1, 0, 0)
 OY = geompy.MakeVectorDXDYDZ(0, 1, 0)
 OZ = geompy.MakeVectorDXDYDZ(0, 0, 1)
-Box_1 = geompy.MakeBoxDXDYDZ(1, 1, 1)
+Extrusion_1 = geompy.MakePrismDXDYDZ(OZ, 1, 1, 1)
 geompy.addToStudy( O, 'O' )
 geompy.addToStudy( OX, 'OX' )
 geompy.addToStudy( OY, 'OY' )
 geompy.addToStudy( OZ, 'OZ' )
-geompy.addToStudy( Box_1, 'Box_1' )
+geompy.addToStudy( Extrusion_1, 'Extrusion_1' )
 
 
 if salome.sg.hasDesktop():
