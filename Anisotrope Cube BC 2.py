@@ -86,7 +86,7 @@ Box_2 = geompy.MakeBoxDXDYDZ(d1/2, d1/2, L)
 Rotation_2 = geompy.MakeRotation(Box_2, OZ, Pi_4)
 Translation_3 = geompy.MakeTranslation(Rotation_2, L, 0, L/4)
 
-Box_3 = geompy.MakeBoxDXDYDZ(d1/2, d1/2, L2)
+Box_3 = geompy.MakeBoxDXDYDZ(d1/2, d1/2, L/2)
 Rotation_3 = geompy.MakeRotation(Box_3, OZ, Pi_4)
 Translation_4 = geompy.MakeTranslation(Rotation_3, L, 0, L/4)
 
@@ -122,7 +122,7 @@ geompy.addToStudy( Extrusion_4, 'Extrusion_4' )
 i = 0
 #alpha=[0.01,0.02,0.03,0.04,0.05,0.06,0.07,0.08,0.09,0.10,0.11,0.12]
 #alpha=[0.134]
-alpha=[0.16]
+alpha=[0.1]
 for element in alpha:
     Radius = r0/(1-alpha[i])
     Sphere_1 = geompy.MakeSphereR(Radius)
